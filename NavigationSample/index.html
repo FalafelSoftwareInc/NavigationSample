@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <meta charset="utf-8" />
-        <script src="cordova.js"></script>
-        <script src="kendo/js/jquery.min.js"></script>
-        <script src="kendo/js/kendo.mobile.min.js"></script>
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="scripts/hello-world.js"></script>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<script src="cordova.js"></script>
+		<script data-main="scripts/main" src="scripts/libs/require.js"></script>
 
-        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="styles/main.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div data-role="view" id="tabstrip-home" data-title="Hello World!">
-            <h1>Welcome!</h1>
-            <p>
-                Icenium&trade; enables you to build cross-platform device applications regardless of your 
-                development platform by combining the convenience of a local development toolset with the 
-                power and flexibility of the cloud.
-            </p>
-        </div>
+		<link href="scripts/libs/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="styles/main.css" rel="stylesheet" />
+	</head>
+	<body>
 
-        <div data-role="view" id="tabstrip-uiinteraction" data-title="UI Interaction">
-            <h1>Say Hello!</h1>
-            <div id='helloWorldInput'>
-                <label for="txtName" style="display: inline-block;">Enter your name:</label>
-                <input type="text" id="txtName" value="" />
-            </div>
-            <div id='helloWorldText' style="display:block;"></div>
-            <div class="buttonArea">
-                <a id="resetButton" data-role="button" data-click="sayHelloReset" data-icon="refresh">Reset</a>
-                <a id="submitButton" data-role="button" data-click="sayHello" data-icon="compose">Submit</a>
-            </div>
-        </div>
+		<div data-role="splitview">
+			<div data-role="pane" id="left-pane">
+				<div data-role="view" id="side-view">
+					<div data-role="header">
+						<div data-role="navbar">
+							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
+							Navigation Menu
+						</div>
+					</div>
+					<ul data-role="listview" id="subMenuList">
+						<li>
+							<a href="#test-view" data-target="right-pane">Digital Deals</a>
+						</li>
+						<li>
+							<a href="ShoppingList.html" data-target="right-pane">Shopping List</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 
-        <div data-role="view" id="tabstrip-geolocation" data-title="Geolocation">
-            <h1>My Location</h1>
-            <div id="geoLocationContainer">
-                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                <a id="refreshMap" data-role="button" data-click="getLocation" data-icon="refresh">Refresh Location</a>
-                <div id="map_canvas"></div>
-            </div>
-        </div>
+			<div data-role="pane" id="right-pane">
+				<div data-role="view" id="home-view" data-title="Home"
+					 data-init="app.controllers.home.init"
+					 data-before-show="app.controllers.home.beforeShow"
+					 data-show="app.controllers.home.show"
+					 data-model="app.controllers.home.viewModel">
 
-        <div data-role="layout" data-id="mobile-tabstrip">
-            <header data-role="header">
-                <div data-role="navbar">
-                    <span data-role="view-title"></span>
-                </div>
-            </header>
+					<div data-role="header">
+						<div data-role="navbar">
+							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
+						</div>
+					</div>
 
-            <div data-role="footer">
-                <div data-role="tabstrip">
-                    <a href="#tabstrip-home" data-icon="home">Home</a>
-                    <a href="#tabstrip-uiinteraction" data-icon="share">UI Interaction</a>
-                    <a href="#tabstrip-geolocation" data-icon="globe">Geolocation</a>
-                </div>
-            </div>
-        </div>
+					<h1>Home View</h1>
+					<p>
+						This is the home view
+					</p>
+				</div>
 
-        <script>
-            var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
-        </script>
-    </body>
+				<div data-role="view" id="test-view" data-title="Home"
+					 data-init="app.controllers.test.init"
+					 data-before-show="app.controllers.test.beforeShow"
+					 data-show="app.controllers.test.show"
+					 data-model="app.controllers.test.viewModel">
+					<div data-role="header">
+						<div data-role="navbar">
+							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
+						</div>
+					</div>
+
+					<h1>Test View</h1>
+					<p>
+						This is the test view
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
 </html>
