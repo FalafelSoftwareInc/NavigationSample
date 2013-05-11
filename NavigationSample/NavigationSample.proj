@@ -32,6 +32,7 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="styles" />
     <Folder Include="views" />
     <Folder Include="scripts" />
     <Folder Include="scripts\app\controllers" />
@@ -64,8 +65,8 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\app\app.js" />
-    <Content Include="scripts\app\controllers\about.js" />
-    <Content Include="scripts\app\controllers\test.js" />
+    <Content Include="scripts\app\controllers\remote.js" />
+    <Content Include="scripts\app\controllers\local.js" />
     <Content Include="scripts\app\controllers\home.js" />
     <Content Include="scripts\libs\kendo\js\jquery.min.js" />
     <Content Include="scripts\libs\kendo\js\kendo.mobile.min.js" />
@@ -75,7 +76,7 @@
     <Content Include="scripts\libs\kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\libs\require.js" />
     <Content Include="scripts\main.js" />
-    <Content Include="styles\main.css" />
+    <Content Include="styles\app.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
       <TargetName>cordova.js</TargetName>
@@ -84,7 +85,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
-    <Content Include="views\about.html" />
+    <Content Include="views\remote.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

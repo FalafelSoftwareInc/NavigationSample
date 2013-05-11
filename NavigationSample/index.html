@@ -7,31 +7,38 @@
 		<script data-main="scripts/main" src="scripts/libs/require.js"></script>
 
 		<link href="scripts/libs/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-		<link href="styles/main.css" rel="stylesheet" />
+		<link href="styles/app.css" rel="stylesheet" />
 	</head>
 	<body>
 
 		<div data-role="splitview">
+
+			<!--NAV PANE-->
 			<div data-role="pane" id="left-pane">
-				<div data-role="view" id="side-view">
+
+				<div data-role="view" id="menu-view">
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
-							Navigation Menu
+							<a href="#home-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button" data-click="app.toggleMenu"></a>
+							Menu
 						</div>
 					</div>
-					<ul data-role="listview" id="subMenuList">
+                    
+					<ul data-role="listview" id="subMenuList" data-click="app.toggleMenu">
 						<li>
-							<a href="#test-view" data-target="right-pane">Digital Deals</a>
+							<a href="#local-view" data-target="right-pane">Local Page</a>
 						</li>
 						<li>
-							<a href="ShoppingList.html" data-target="right-pane">Shopping List</a>
+							<a href="views/remote.html" data-target="right-pane">Remote Page</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 
+			<!--MAIN CONTENT PANE-->
 			<div data-role="pane" id="right-pane">
+
+				<!--HOME VIEW-->
 				<div data-role="view" id="home-view" data-title="Home"
 					 data-init="app.controllers.home.init"
 					 data-before-show="app.controllers.home.beforeShow"
@@ -40,7 +47,8 @@
 
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
+							<a href="#menu-view" id="toggle-button" data-click="app.toggleMenu" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
+							Home
 						</div>
 					</div>
 
@@ -50,25 +58,33 @@
 					</p>
 				</div>
 
-				<div data-role="view" id="test-view" data-title="Home"
-					 data-init="app.controllers.test.init"
-					 data-before-show="app.controllers.test.beforeShow"
-					 data-show="app.controllers.test.show"
-					 data-model="app.controllers.test.viewModel">
+				<!--LOCAL VIEW-->
+				<div data-role="view" id="local-view" data-title="Local"
+					 data-init="app.controllers.local.init"
+					 data-before-show="app.controllers.local.beforeShow"
+					 data-show="app.controllers.local.show"
+					 data-model="app.controllers.local.viewModel">
+
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#main-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button"></a>
+							<a href="#menu-view" id="toggle-button" data-click="app.toggleMenu" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
+							Local
 						</div>
 					</div>
 
-					<h1>Test View</h1>
+					<h1>Local View</h1>
 					<p>
-						This is the test view
+						This is the local view
 					</p>
 				</div>
+
 			</div>
 
 		</div>
+
+		<script>
+			
+		</script>
 
 	</body>
 </html>

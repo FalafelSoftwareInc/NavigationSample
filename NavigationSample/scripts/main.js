@@ -13,7 +13,7 @@ require.config({
 
 var app;
 
-require(["app/app"], function (App) {
-    app = new App();
+require(["app/app"], function (application) {
+    app = application;
     app.init();
 });

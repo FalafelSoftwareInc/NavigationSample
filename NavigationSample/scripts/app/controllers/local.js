@@ -1,15 +1,15 @@
 define([], function () {
     return {
         init: function (initEvt) {
-            alert("hit test.init");
+            alert("hit local.init");
         },
  
         beforeShow: function (beforeShowEvt) {
-            alert("hit test.beforeShow");
+            alert("hit local.beforeShow");
         },
  
         show: function (showEvt) {
-            alert("hit test.show");
+            alert("hit local.show");
         }
     }
 });
