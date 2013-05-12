@@ -7,6 +7,7 @@
 		<script data-main="scripts/main" src="scripts/libs/require.js"></script>
 
 		<link href="scripts/libs/kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/kendo.override.css" rel="stylesheet" />
 		<link href="styles/app.css" rel="stylesheet" />
 	</head>
 	<body>
@@ -19,12 +20,12 @@
 				<div data-role="view" id="menu-view">
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#home-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button" data-click="app.toggleMenu"></a>
+							<a href="#home-view" id="toggle-button" data-target="right-pane" data-align="left" data-icon="home" data-role="button" data-click="app.controllers.navmenu.onHomeButtonClick"></a>
 							Menu
 						</div>
 					</div>
-                    
-					<ul data-role="listview" id="subMenuList" data-click="app.toggleMenu">
+
+					<ul data-role="listview" id="subMenuList" data-click="app.controllers.navmenu.onNavListClick">
 						<li>
 							<a href="#local-view" data-target="right-pane">Local Page</a>
 						</li>
@@ -47,7 +48,7 @@
 
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#menu-view" id="toggle-button" data-click="app.toggleMenu" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
+							<a href="#menu-view" id="toggle-button" data-click="app.controllers.home.onNavButtonClick" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
 							Home
 						</div>
 					</div>
@@ -67,7 +68,7 @@
 
 					<div data-role="header">
 						<div data-role="navbar">
-							<a href="#menu-view" id="toggle-button" data-click="app.toggleMenu" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
+							<a href="#menu-view" id="toggle-button" data-click="app.controllers.local.onNavButtonClick" data-target="left-pane" data-align="left" data-icon="organize" data-role="button"></a>
 							Local
 						</div>
 					</div>
@@ -83,7 +84,13 @@
 		</div>
 
 		<script>
-			
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+			function onDeviceReady() {
+                // keep the splashscreen visible
+                //  while the home view loads
+				navigator.splashscreen.show();
+			}
 		</script>
 
 	</body>

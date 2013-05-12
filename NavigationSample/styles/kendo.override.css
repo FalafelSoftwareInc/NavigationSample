@@ -1,0 +1,16 @@
+.km-ios .km-view .km-navbar {
+    /*background-color: rgba(0, 0, 0, 0);*/
+}
+
+.km-ios #left-pane .km-view .km-navbar{
+    background-color: #494545;
+}
+
+.km-ios #left-pane .km-content{
+    background: #494545;
+}
+
+.km-ios #left-pane .km-view .km-content .km-scroll-container .km-listview-wrapper .km-listview li{
+    background-color:#494545;
+    color:white;
+}

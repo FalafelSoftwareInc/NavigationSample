@@ -1,15 +1,22 @@
 define([], function () {
-    return {
-        init: function (initEvt) {
-            alert("hit local.init");
-        },
+	return {
+		init: function (initEvt) {
+			// runs the first time the page is loaded
+			console.log("hit local.init");
+		},
  
-        beforeShow: function (beforeShowEvt) {
-            alert("hit local.beforeShow");
-        },
+		beforeShow: function (beforeShowEvt) {
+			// runs before the page is shown
+			console.log("hit local.beforeShow");
+		},
  
-        show: function (showEvt) {
-            alert("hit local.show");
-        }
-    }
+		show: function (showEvt) {
+			// runs after the page is shown
+			console.log("hit local.show");
+		},
+        
+		onNavButtonClick: function() {
+			app.toggleMenu();  
+		}
+	}
 });

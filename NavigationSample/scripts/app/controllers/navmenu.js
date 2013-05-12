@@ -2,24 +2,25 @@ define([], function () {
 	return {
 		init: function (initEvt) {
             // runs the first time the page is loaded
-			console.log("hit home.init");
+			console.log("hit navmenu.init");
 		},
  
 		beforeShow: function (beforeShowEvt) {
             // runs before the page is shown
-			console.log("hit home.beforeShow");
+			console.log("hit navmenu.beforeShow");
 		},
         
 		show: function (showEvt) {
             // runs after the page is shown
-			console.log("hit home.show");
-            
-			// hide the splashscreen now
-			navigator.splashscreen.hide();
+			console.log("hit navmenu.show");
 		},
 
-        onNavButtonClick: function() {
+        onNavListClick: function() {
              app.toggleMenu();  
+        },
+        
+        onHomeButtonClick: function() {
+            app.toggleMenu();
         }
 	}
 });

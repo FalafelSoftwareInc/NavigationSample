@@ -6,11 +6,16 @@
     <AppIdentifier>com.telerik.NavigationSample</AppIdentifier>
     <ProjectName>NavigationSample</ProjectName>
     <IsRunnable>true</IsRunnable>
-    <TemplateAppName>Cordova240</TemplateAppName>
+    <TemplateAppName>Cordova220</TemplateAppName>
     <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <BundleVersion>1.0</BundleVersion>
+    <iOSDisplayName>Nav Sample</iOSDisplayName>
+    <iOSDeviceFamily>1;2</iOSDeviceFamily>
+    <iOSBackgroundMode />
+    <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
@@ -65,6 +70,7 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\controllers\navmenu.js" />
     <Content Include="scripts\app\controllers\remote.js" />
     <Content Include="scripts\app\controllers\local.js" />
     <Content Include="scripts\app\controllers\home.js" />
@@ -85,6 +91,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="styles\kendo.override.css" />
     <Content Include="views\remote.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
