@@ -14,3 +14,7 @@
     background-color:#494545;
     color:white;
 }
+
+.km-ios6 #left-pane :not(.km-tabstrip):not(.km-buttongroup) > .km-button {
+    background-color:#494545;
+}

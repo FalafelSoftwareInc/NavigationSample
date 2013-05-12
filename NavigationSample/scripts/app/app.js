@@ -16,6 +16,8 @@ define([
 				   me.isMenuVisible = false;
 				   me.kendoApplication = new kendo.mobile.Application(document.body, { transition: "slide" });
             
+                   window.onerror = me.onUnhandledError;
+                   
 				   $("body").kendoTouch({
 					   enableSwipe: true,
 					   swipe: function(e) {
@@ -35,6 +37,10 @@ define([
 				   remote: remoteController,
 				   navmenu: navMenuController
 			   },    
+               
+               onUnhandledError: function(msg, url, line) {
+                   alert("Unhandled error: " + message + " on line " + linenumber + " in " + url);
+               },
         
 			   hideMenu: function() {
 				   var me = this;
